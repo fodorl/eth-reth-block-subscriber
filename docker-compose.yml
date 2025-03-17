@@ -1,0 +1,12 @@
+services:
+  block-subscriber:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: block-subscriber
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - ./logs:/app/logs
+    environment:
+      - WS_ENDPOINT=ws://localhost:8546
