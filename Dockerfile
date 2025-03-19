@@ -6,6 +6,10 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY block_subscriber.py .
-RUN chmod +x block_subscriber.py
+COPY metrics.py .
+COPY config.yaml .
 
-CMD ["./block_subscriber.py"]
+RUN chmod +x block_subscriber.py
+RUN mkdir -p logs
+
+CMD ["python", "block_subscriber.py"]

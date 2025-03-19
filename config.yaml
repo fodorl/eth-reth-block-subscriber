@@ -1,0 +1,6 @@
+# WebSocket endpoint configurations
+endpoints:
+  - name: reth-local
+    ws_url: ws://host.docker.internal:8546
+  - name: reth-remote
+    ws_url: ws://host.docker.internal:8546
